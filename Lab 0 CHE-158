@@ -1,0 +1,458 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyORCJvanuhjqOO9RUn6lsoh",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Gstafford926/Two-Bit-Full-Adder/blob/main/Lab%200%20CHE-158\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 2,
+      "metadata": {
+        "id": "9QUEfvJLRo57"
+      },
+      "outputs": [],
+      "source": [
+        "import numpy as np\n",
+        "import pandas as pd\n",
+        "import matplotlib.pyplot as plt\n",
+        "import math as math\n",
+        "import scipy.stats as sp\n",
+        "import statsmodels.api as sm"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "1. print \"Hello World\""
+      ],
+      "metadata": {
+        "id": "6LBAnbTzRqiO"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(\"Hello World\")\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "xP3-QsVmTJFu",
+        "outputId": "15e1640f-62b2-4dc2-b8aa-e0f540be06ac"
+      },
+      "execution_count": 7,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Hello World\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "2.\n",
+        "import numpy: Numpy provides a collection of mathematical functions and allows you to create arrays.\n",
+        "import math: gives access to a wide range of mathematical functions and constants\n",
+        "import matplotlib: Allows you to create visualizations.\n",
+        "import scipy.stats: This model is used for statistical analyses\n",
+        "import statsmodels.api: A powerful package for statistical modeling and econometrics.\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "k2LgnTGbTPtu"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "3. Print a 5x10 box consisting of the asterisk"
+      ],
+      "metadata": {
+        "id": "yK-6PdOPVYUT"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "for i in range(5): #loops five times\n",
+        "  print('*'*10)# prints ten asterisks in each row\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "PySwrITJVoMO",
+        "outputId": "f4156955-e48f-4e8e-e491-8719afeda701"
+      },
+      "execution_count": 8,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "**********\n",
+            "**********\n",
+            "**********\n",
+            "**********\n",
+            "**********\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "4. Create a script to evaluate\"350* 130000000000000\" and print the solution in scientific notation."
+      ],
+      "metadata": {
+        "id": "zqNI0tO5XblS"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "x=350*130000000000000\n",
+        "print(f\"{x:.2e}\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "hEqNv59fXrOI",
+        "outputId": "928f3c36-3f75-45ba-c95f-fa87eb20170f"
+      },
+      "execution_count": 9,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "45500000000000000\n",
+            "4.55e+16\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "5. Create a script to print \"13.2\" as an integer\n"
+      ],
+      "metadata": {
+        "id": "OLBZJqi4WBw4"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "x=13.2\n",
+        "print(f\"{x:.1f}\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "nsR-Z0PzWLdD",
+        "outputId": "303240f9-b8a1-4480-ec8f-45b79432e70a"
+      },
+      "execution_count": 12,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "13.2\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "6. Use a while loop to create a countdown from 10 to 0, and then print \"Blast OFF!\"."
+      ],
+      "metadata": {
+        "id": "pKNLiLt6Ydsi"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#initalizes the variable\n",
+        "count=10\n",
+        "\n",
+        "while count > 0:\n",
+        "  print(count)\n",
+        "  count-=1\n",
+        "print(\"Blast OFF!\")\n",
+        "\n",
+        "\n",
+        "\n",
+        ""
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "O6p-m55NYxHf",
+        "outputId": "1bbea9e7-8505-4ce9-89dc-d351b4acb999"
+      },
+      "execution_count": 10,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "10\n",
+            "9\n",
+            "8\n",
+            "7\n",
+            "6\n",
+            "5\n",
+            "4\n",
+            "3\n",
+            "2\n",
+            "1\n",
+            "Blast OFF!\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "7. evaluate the expression"
+      ],
+      "metadata": {
+        "id": "M7KvG6QHZhzc"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "x=512-282\n",
+        "y=47*(48+10)\n",
+        "z=x/y\n",
+        "print(z)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "gbNZrCaJZlka",
+        "outputId": "7dcfc287-67b9-4769-9b04-0b0ccfd5730a"
+      },
+      "execution_count": 16,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "0.08437270726338958\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "8. Program a simple script for \"i=5\" if the following wee to be done to variable\"i\":\n",
+        "a. square root\n",
+        "b. squared\n",
+        "c.multiplied by 100\n",
+        "d repeats \"i\" up to 3x\n",
+        "  i. have the output show its results horizontally\n",
+        "  ii.have the output show its results horizontally"
+      ],
+      "metadata": {
+        "id": "YVlA9caHZ7a7"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "i = 5\n",
+        "count = 0\n",
+        "a = math.sqrt(i)\n",
+        "b = i**2\n",
+        "c = i*100\n",
+        "while count < 5:\n",
+        "  print(i)\n",
+        "  count+=1 #increments the count\n",
+        "I=[a,b,c]\n",
+        "x=[a]\n",
+        "y=[b]\n",
+        "z=[c]\n",
+        "print(I)\n",
+        "print(x)\n",
+        "print(y)\n",
+        "print(z)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "0n69MYRRab2y",
+        "outputId": "0081aa8c-f735-4b67-cf4d-03dc78f05abd"
+      },
+      "execution_count": 6,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "5\n",
+            "5\n",
+            "5\n",
+            "5\n",
+            "5\n",
+            "[2.23606797749979, 25, 500]\n",
+            "[2.23606797749979]\n",
+            "[25]\n",
+            "[500]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "9. Program a script that asks for input of some temperature in Celsius, but the code will print the results in Fahrenheit."
+      ],
+      "metadata": {
+        "id": "y9gTjSNucSEr"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "C = input(\"Enter temperature in Celsius: \")\n",
+        "#convert input into a whole number Float(to handle decimals\n",
+        "#then use F to convert\n",
+        "F = ( float(C)* (9/5)) + 32\n",
+        "print(\"Temperature in Fahrenheit is: \", F, \"F\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ML7SeDV1ch0l",
+        "outputId": "de77974d-6cac-40e4-a1c0-05fa6eed3ab9"
+      },
+      "execution_count": 16,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter temperature in Celsius: 0\n",
+            "Temperature in Fahrenheit is:  32.0 F\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "10.Repeat number 9 but your input will be some time in hours and the final input will be in minutes."
+      ],
+      "metadata": {
+        "id": "liJVIQ8Ce6ag"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "t = input(\"Enter time in hours: \")\n",
+        "#convert input into a whole number Float(to handle decimals\n",
+        "#then use T to convert\n",
+        "T = ( float(t)* (60))\n",
+        "print(\"The time in minutes is: \", T, \"min\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "01yhWr4WfE65",
+        "outputId": "7fad0dc0-5487-40ba-93f6-d24011dd143d"
+      },
+      "execution_count": 19,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter time in hours: 1.5\n",
+            "The time in minutes is:  90.0 min\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "11. Program a script that asks for a temperature in Celsius, then print the output as one of the following options: Too Hot, Too Cold, or Moderate. You can set the temperature range as the cut-off for each option."
+      ],
+      "metadata": {
+        "id": "chiX3KNgfg0Z"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "C = input(\"Enter temperature in Celsius: \")\n",
+        "if float(C) > 30:\n",
+        "  print(\"Too Hot\")\n",
+        "elif float(C) < 10:\n",
+        "  print(\"Too Cold\")\n",
+        "else:\n",
+        "  print(\"Moderate\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "HWqqxJx_f_EI",
+        "outputId": "1fa3796b-eec2-4ed3-8307-3830effd885a"
+      },
+      "execution_count": 27,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter temperature in Celsius: 10\n",
+            "Moderate\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
